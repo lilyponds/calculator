@@ -14,73 +14,99 @@ function multiply(a,b){
 }
 
 function divide(a,b){
-    let divide = b==0 ? "Error":a/b;
-    return divide;
+    if(b==0){
+        return "Error";
+    } else {
+        return (a/b).toFixed(4);
+    }
 }
+
+
 let input = "";
 
 const display = document.querySelector(".display");
 
 const one = document.querySelector("#one").addEventListener("click",function (){
+   if(input!="Error"){
     input += "1";
     display.textContent = input;
+   }
 });
 const two = document.querySelector("#two").addEventListener("click",function (){
+    if(input!="Error"){
     input += "2";
     display.textContent = input;
-});
+}});
 const three = document.querySelector("#three").addEventListener("click",function (){
+    if(input!="Error"){
     input += "3";
     display.textContent = input;
-});
+}});
 const four = document.querySelector("#four").addEventListener("click",function (){
+    if(input!="Error"){
     input += "4";
     display.textContent = input;
-});
+}});
 const five = document.querySelector("#five").addEventListener("click",function (){
+    if(input!="Error"){
     input += "5";
     display.textContent = input;
-});
+}});
 const six = document.querySelector("#six").addEventListener("click",function (){
+    if(input!="Error"){
     input += "6";
     display.textContent = input;
-});
+}});
 const seven = document.querySelector("#seven").addEventListener("click",function (){
+    if(input!="Error"){
     input += "7";
     display.textContent = input;
-});
+}});
 const eight = document.querySelector("#eight").addEventListener("click",function (){
+    if(input!="Error"){
     input += "8";
     display.textContent = input;
-});
+}});
 const nine = document.querySelector("#nine").addEventListener("click",function (){
+    if(input!="Error"){
     input += "9";
     display.textContent = input;
-});
+}});
 const zero = document.querySelector("#zero").addEventListener("click",function (){
+    if(input!="Error"){
     input += "0";
     display.textContent = input;
-});
+}});
 
 const operateOne = document.querySelector("#sum").addEventListener("click",function (){
+    if(input!="Error"){
     input += " + ";
     display.textContent = input;
-});
+}});
 const operateTwo = document.querySelector("#substract").addEventListener("click",function (){
+    if(input!="Error"){
     input += " - ";
     display.textContent = input;
-});
+}});
 const operateThree = document.querySelector("#multiply").addEventListener("click",function (){
+    if(input!="Error"){
     input += " * ";
     display.textContent = input;
-});
+}});
 const operateFour = document.querySelector("#divide").addEventListener("click",function (){
+    if(input!="Error"){
     input += " / ";
     display.textContent = input;
-});
+}});
 
 
 const enter = document.querySelector("#enter").addEventListener("click",operate);
+const backspace = document.querySelector("#backspace").addEventListener("click",function (){
+    let back = input.split("");
+    back.splice(back.length-1,1,);
+    input = back.join("");
+    display.textContent = input;
+});
 const clear = document.querySelector("#clear").addEventListener("click",function (){
     input = "";
     display.textContent = input;
@@ -90,8 +116,9 @@ const clear = document.querySelector("#clear").addEventListener("click",function
 
 function operate(){
     let result = 0;
+if(input!="Error"){
 let calculate = input.split(" ");
-if(calculate.length==3){
+
 if(calculate[1]=="+"){
     result = sum(+calculate[0],+calculate[2]);
 } else if(calculate[1]=="-"){
@@ -102,8 +129,16 @@ if(calculate[1]=="+"){
     result = divide(+calculate[0],+calculate[2]);
 }
 input = result;
-display.textContent = input;}
-    else {
+if(input=="Error"){
+    display.textContent = "You little prick";
+}else {
+calculate.splice(0,3,input);
+    input = calculate.join("");
+    display.textContent = input;
+    console.log(calculate);
+}
+if(input!="Error"){
+for(i=1;i<calculate.length;){
     if(calculate[1]=="+"){
         result = sum(+calculate[0],+calculate[2]);
     } else if(calculate[1]=="-"){
@@ -113,9 +148,17 @@ display.textContent = input;}
     } else if(calculate[1]=="/"){
         result = divide(+calculate[0],+calculate[2]);
     }
-    calculate.splice(0,3,result);
-    input = calculate.join('');
-    console.log(input);
-    operate();
+    input = result;
+    if(input=="Error"){
+        display.textContent = "You little prick";
+        break;
+    }else {
+    calculate.splice(0,3,input);
+    input = calculate.join("");
+    display.textContent = input;
+    console.log(calculate);
+    }
+    }
+}
 }
 }
