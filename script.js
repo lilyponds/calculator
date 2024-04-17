@@ -99,6 +99,97 @@ const operateFour = document.querySelector("#divide").addEventListener("click",f
     display.textContent = input;
 }});
 
+const keyboard = document.addEventListener('keydown',(e)=>{
+    if(e.key=="1"){
+        if(input!="Error"){
+            input += "1";
+            display.textContent = input;
+           }
+    } else if(e.key=="2"){
+        if(input!="Error"){
+            input += "2";
+            display.textContent = input;
+           }
+    } else if(e.key=="3"){
+        if(input!="Error"){
+            input += "3";
+            display.textContent = input;
+           }
+    } else if(e.key=="4"){
+        if(input!="Error"){
+            input += "4";
+            display.textContent = input;
+           }
+    } else if(e.key=="5"){
+        if(input!="Error"){
+            input += "5";
+            display.textContent = input;
+           }
+    } else if(e.key=="6"){
+        if(input!="Error"){
+            input += "6";
+            display.textContent = input;
+           }
+    } else if(e.key=="7"){
+        if(input!="Error"){
+            input += "7";
+            display.textContent = input;
+           }
+    } else if(e.key=="8"){
+        if(input!="Error"){
+            input += "8";
+            display.textContent = input;
+           }
+    } else if(e.key=="9"){
+        if(input!="Error"){
+            input += "9";
+            display.textContent = input;
+           }
+    } else if(e.key=="0"){
+        if(input!="Error"){
+            input += "0";
+            display.textContent = input;
+           }
+    } else if(e.key=="."){
+        if(input!="Error"){
+            input += ".";
+            display.textContent = input;
+           }
+    } else if(e.key=="=" && e.shiftKey){ //pending
+        if(input!="Error"){
+            input += " + ";
+            display.textContent = input;
+        }
+
+    } else if(e.key=="-"){
+        if(input!="Error"){
+            input += " - ";
+            display.textContent = input;
+        }
+    } else if(e.key=="/"){
+        if(input!="Error"){
+            input += " / ";
+            display.textContent = input;
+        }
+    } else if(e.key=="8" && e.shiftKey){ //pending
+        if(input!="Error"){
+            input += " * ";
+            display.textContent = input;
+        }
+    } else if(e.key=="Backspace"){
+        if(input!="Error"){
+            let back = input.split("");
+        back.splice(back.length-1,1,);
+        input = back.join("");
+        display.textContent = input;
+        }
+    } else if(e.code=="Enter"){ //pending
+        if(input!="Error"){
+            operate();
+        }
+    } 
+})
+
 
 const enter = document.querySelector("#enter").addEventListener("click",operate);
 const backspace = document.querySelector("#backspace").addEventListener("click",function (){
@@ -111,8 +202,6 @@ const clear = document.querySelector("#clear").addEventListener("click",function
     input = "";
     display.textContent = input;
 });
-
-
 
 function operate(){
     let result = 0;
