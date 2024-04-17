@@ -78,6 +78,12 @@ const zero = document.querySelector("#zero").addEventListener("click",function (
     display.textContent = input;
 }});
 
+const decimal = document.querySelector("#decimal").addEventListener("click",function (){
+    if(input!="Error"){
+    input += ".";
+    display.textContent = input; //pending logic for more than one decimal
+}});
+
 const operateOne = document.querySelector("#sum").addEventListener("click",function (){
     if(input!="Error"){
     input += " + ";
@@ -150,7 +156,7 @@ const keyboard = document.addEventListener('keydown',(e)=>{
             input += "0";
             display.textContent = input;
            }
-    } else if(e.key=="."){
+    } else if(e.key=="."){               //pending logic for more than one decimal
         if(input!="Error"){
             input += ".";
             display.textContent = input;
@@ -183,10 +189,13 @@ const keyboard = document.addEventListener('keydown',(e)=>{
         input = back.join("");
         display.textContent = input;
         }
-    } else if(e.code=="Enter"){ //pending
+    } else if(e.code=="Enter"){
         if(input!="Error"){
             operate();
         }
+    } else if(e.key=="c"||e.key=="C"){
+        input = "";
+        display.textContent = input;
     } 
 })
 
