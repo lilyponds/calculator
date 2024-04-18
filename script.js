@@ -167,7 +167,7 @@ const keyboard = document.addEventListener('keydown',(e)=>{
             input += "0";
             display.textContent = input;
            }
-    } else if(e.key=="."){               //pending logic for more than one decimal
+    } else if(e.key=="."){              
         if(input!="Error"){
             let tempCheck;
         tempCheck = input.split(" ");
@@ -180,7 +180,7 @@ const keyboard = document.addEventListener('keydown',(e)=>{
         }
         if(containsDecimal=="False"){
         input += ".";
-    display.textContent = input; //pending logic for more than one decimal
+    display.textContent = input; 
         }
            }
     } else if(e.key=="+"){
@@ -207,9 +207,15 @@ const keyboard = document.addEventListener('keydown',(e)=>{
     } else if(e.key=="Backspace"){
         if(input!="Error"){
             let back = input.split("");
-        back.splice(back.length-1,1,);
-        input = back.join("");
-        display.textContent = input;
+    if(back[back.length-1]==" "){
+    back.splice(back.length-3,3,);
+    input = back.join("");
+    display.textContent = input;
+    } else {
+    back.splice(back.length-1,1,);
+    input = back.join("");
+    display.textContent = input;
+    }
         }
     } else if(e.code=="Enter"||e.key=="="){
         if(input!="Error"){
@@ -225,9 +231,15 @@ const keyboard = document.addEventListener('keydown',(e)=>{
 const enter = document.querySelector("#enter").addEventListener("click",operate);
 const backspace = document.querySelector("#backspace").addEventListener("click",function (){
     let back = input.split("");
+    if(back[back.length-1]==" "){
+    back.splice(back.length-3,3,);
+    input = back.join("");
+    display.textContent = input;
+    } else {
     back.splice(back.length-1,1,);
     input = back.join("");
     display.textContent = input;
+    }
 });
 const clear = document.querySelector("#clear").addEventListener("click",function (){
     input = "";
