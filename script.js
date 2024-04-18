@@ -80,8 +80,19 @@ const zero = document.querySelector("#zero").addEventListener("click",function (
 
 const decimal = document.querySelector("#decimal").addEventListener("click",function (){
     if(input!="Error"){
-    input += ".";
+        let tempCheck;
+        tempCheck = input.split(" ");
+        tempDecimalPoint = tempCheck[tempCheck.length-1].split("");
+        let containsDecimal = "False";
+        for(i=0;i<tempDecimalPoint.length;i++){
+            if(tempDecimalPoint[i]=="."){
+                containsDecimal = "True";
+            }
+        }
+        if(containsDecimal=="False"){
+        input += ".";
     display.textContent = input; //pending logic for more than one decimal
+        }
 }});
 
 const operateOne = document.querySelector("#sum").addEventListener("click",function (){
@@ -158,8 +169,19 @@ const keyboard = document.addEventListener('keydown',(e)=>{
            }
     } else if(e.key=="."){               //pending logic for more than one decimal
         if(input!="Error"){
-            input += ".";
-            display.textContent = input;
+            let tempCheck;
+        tempCheck = input.split(" ");
+        tempDecimalPoint = tempCheck[tempCheck.length-1].split("");
+        let containsDecimal = "False";
+        for(i=0;i<tempDecimalPoint.length;i++){
+            if(tempDecimalPoint[i]=="."){
+                containsDecimal = "True";
+            }
+        }
+        if(containsDecimal=="False"){
+        input += ".";
+    display.textContent = input; //pending logic for more than one decimal
+        }
            }
     } else if(e.key=="+"){
         if(input!="Error"){
