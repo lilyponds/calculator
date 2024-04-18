@@ -6,7 +6,7 @@ button {
     color: aliceblue;
     width: 80px;
     height: 80px;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 5px lightgrey;
     font-family: monospace;
     font-size: 20px;
@@ -37,6 +37,7 @@ button {
     padding: 10px;
     box-shadow: 4px 4px 2px antiquewhite inset;
     align-content: center;
+    text-align: right;
 }
 
 
