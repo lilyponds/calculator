@@ -1,5 +1,8 @@
 body{
     background-color: antiquewhite;
+    row-gap: 15px;
+    display: flex;
+    flex-direction: column;
 }
 button {
     background-color: rgb(165, 42, 42, .85);
@@ -104,4 +107,21 @@ button {
 
 #zero {
     width: 180px;
+}
+
+.instructions {
+    background-color: whitesmoke;
+    font-family: monospace;
+    font-size: 25;
+    color: darkblue;
+    font-weight: 500;
+    width: 800px;
+    height: 200px;
+    margin: auto;
+    padding: 10px;
+    box-shadow: inset 15px lightslategray;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
