@@ -161,7 +161,7 @@ const keyboard = document.addEventListener('keydown',(e)=>{
             input += ".";
             display.textContent = input;
            }
-    } else if(e.key=="=" && e.shiftKey){ //pending
+    } else if(e.key=="+"){
         if(input!="Error"){
             input += " + ";
             display.textContent = input;
@@ -177,7 +177,7 @@ const keyboard = document.addEventListener('keydown',(e)=>{
             input += " / ";
             display.textContent = input;
         }
-    } else if(e.key=="8" && e.shiftKey){ //pending
+    } else if(e.key=="*"){ 
         if(input!="Error"){
             input += " * ";
             display.textContent = input;
@@ -189,7 +189,7 @@ const keyboard = document.addEventListener('keydown',(e)=>{
         input = back.join("");
         display.textContent = input;
         }
-    } else if(e.code=="Enter"){
+    } else if(e.code=="Enter"||e.key=="="){
         if(input!="Error"){
             operate();
         }
