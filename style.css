@@ -112,10 +112,10 @@ button {
 .instructions {
     background-color: whitesmoke;
     font-family: monospace;
-    font-size: 25;
+    font-size: 16px;
     color: darkblue;
     font-weight: 500;
-    width: 800px;
+    width: 1000px;
     height: 200px;
     margin: auto;
     padding: 10px;
