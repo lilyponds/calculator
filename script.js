@@ -1,16 +1,16 @@
 function sum(a,b){
     let sum = a+b;
-    return sum;
+    return sum.toFixed(4);
 }
 
 function substract(a,b){
     let substract = a-b;
-    return substract;
+    return substract.toFixed(4);
 }
 
 function multiply(a,b){
     let multiply = a*b;
-    return multiply;
+    return multiply.toFixed(4);
 }
 
 function divide(a,b){
@@ -21,64 +21,18 @@ function divide(a,b){
     }
 }
 
-
 let input = "";
 
 const display = document.querySelector(".display");
 
-const one = document.querySelector("#one").addEventListener("click",function (){
-   if(input!="Error"){
-    input += "1";
-    display.textContent = input;
-   }
-});
-const two = document.querySelector("#two").addEventListener("click",function (){
+function display_input(value) {
     if(input!="Error"){
-    input += "2";
-    display.textContent = input;
-}});
-const three = document.querySelector("#three").addEventListener("click",function (){
-    if(input!="Error"){
-    input += "3";
-    display.textContent = input;
-}});
-const four = document.querySelector("#four").addEventListener("click",function (){
-    if(input!="Error"){
-    input += "4";
-    display.textContent = input;
-}});
-const five = document.querySelector("#five").addEventListener("click",function (){
-    if(input!="Error"){
-    input += "5";
-    display.textContent = input;
-}});
-const six = document.querySelector("#six").addEventListener("click",function (){
-    if(input!="Error"){
-    input += "6";
-    display.textContent = input;
-}});
-const seven = document.querySelector("#seven").addEventListener("click",function (){
-    if(input!="Error"){
-    input += "7";
-    display.textContent = input;
-}});
-const eight = document.querySelector("#eight").addEventListener("click",function (){
-    if(input!="Error"){
-    input += "8";
-    display.textContent = input;
-}});
-const nine = document.querySelector("#nine").addEventListener("click",function (){
-    if(input!="Error"){
-    input += "9";
-    display.textContent = input;
-}});
-const zero = document.querySelector("#zero").addEventListener("click",function (){
-    if(input!="Error"){
-    input += "0";
-    display.textContent = input;
-}});
+        input += value;
+        display.textContent = input;
+       }
+}
 
-const decimal = document.querySelector("#decimal").addEventListener("click",function (){
+function display_decimal() {
     if(input!="Error"){
         let tempCheck;
         tempCheck = input.split(" ");
@@ -90,132 +44,73 @@ const decimal = document.querySelector("#decimal").addEventListener("click",func
             }
         }
         if(containsDecimal=="False"){
-        input += ".";
-    display.textContent = input; //pending logic for more than one decimal
+            input += ".";
+            display.textContent = input;
         }
-}});
+    }
+}
 
-const operateOne = document.querySelector("#sum").addEventListener("click",function (){
-    if(input!="Error"){
-    input += " + ";
-    display.textContent = input;
-}});
-const operateTwo = document.querySelector("#substract").addEventListener("click",function (){
-    if(input!="Error"){
-    input += " - ";
-    display.textContent = input;
-}});
-const operateThree = document.querySelector("#multiply").addEventListener("click",function (){
-    if(input!="Error"){
-    input += " * ";
-    display.textContent = input;
-}});
-const operateFour = document.querySelector("#divide").addEventListener("click",function (){
-    if(input!="Error"){
-    input += " / ";
-    display.textContent = input;
-}});
+const one = document.querySelector("#one").addEventListener("click",(e)=>display_input("1"));
+const two = document.querySelector("#two").addEventListener("click",(e)=>display_input("2"));
+const three = document.querySelector("#three").addEventListener("click",(e)=>display_input("3"));
+const four = document.querySelector("#four").addEventListener("click",(e)=>display_input("4"));
+const five = document.querySelector("#five").addEventListener("click",(e)=>display_input("5"));
+const six = document.querySelector("#six").addEventListener("click",(e)=>display_input("6"));
+const seven = document.querySelector("#seven").addEventListener("click",(e)=>display_input("7"));
+const eight = document.querySelector("#eight").addEventListener("click",(e)=>display_input("8"));
+const nine = document.querySelector("#nine").addEventListener("click",(e)=>display_input("9"));
+const zero = document.querySelector("#zero").addEventListener("click",(e)=>display_input("0"));
+
+const decimal = document.querySelector("#decimal").addEventListener("click",(e)=>display_decimal());
+
+const operateOne = document.querySelector("#sum").addEventListener("click",(e)=>display_input(" + "));
+const operateTwo = document.querySelector("#substract").addEventListener("click",(e)=>display_input(" - "));
+const operateThree = document.querySelector("#multiply").addEventListener("click",(e)=>display_input(" * "));
+const operateFour = document.querySelector("#divide").addEventListener("click",(e)=>display_input(" / "));
 
 const keyboard = document.addEventListener('keydown',(e)=>{
     if(e.key=="1"){
-        if(input!="Error"){
-            input += "1";
-            display.textContent = input;
-           }
+        display_input("1");
     } else if(e.key=="2"){
-        if(input!="Error"){
-            input += "2";
-            display.textContent = input;
-           }
+        display_input("2");
     } else if(e.key=="3"){
-        if(input!="Error"){
-            input += "3";
-            display.textContent = input;
-           }
+        display_input("3");
     } else if(e.key=="4"){
-        if(input!="Error"){
-            input += "4";
-            display.textContent = input;
-           }
+        display_input("4");
     } else if(e.key=="5"){
-        if(input!="Error"){
-            input += "5";
-            display.textContent = input;
-           }
+        display_input("5");
     } else if(e.key=="6"){
-        if(input!="Error"){
-            input += "6";
-            display.textContent = input;
-           }
+        display_input("6");
     } else if(e.key=="7"){
-        if(input!="Error"){
-            input += "7";
-            display.textContent = input;
-           }
+        display_input("7");
     } else if(e.key=="8"){
-        if(input!="Error"){
-            input += "8";
-            display.textContent = input;
-           }
+        display_input("8");
     } else if(e.key=="9"){
-        if(input!="Error"){
-            input += "9";
-            display.textContent = input;
-           }
+        display_input("9");
     } else if(e.key=="0"){
-        if(input!="Error"){
-            input += "0";
-            display.textContent = input;
-           }
+        display_input("0");
     } else if(e.key=="."){              
-        if(input!="Error"){
-            let tempCheck;
-        tempCheck = input.split(" ");
-        tempDecimalPoint = tempCheck[tempCheck.length-1].split("");
-        let containsDecimal = "False";
-        for(i=0;i<tempDecimalPoint.length;i++){
-            if(tempDecimalPoint[i]=="."){
-                containsDecimal = "True";
-            }
-        }
-        if(containsDecimal=="False"){
-        input += ".";
-    display.textContent = input; 
-        }
-           }
+        display_decimal();
     } else if(e.key=="+"){
-        if(input!="Error"){
-            input += " + ";
-            display.textContent = input;
-        }
-
+        display_input(" + ");
     } else if(e.key=="-"){
-        if(input!="Error"){
-            input += " - ";
-            display.textContent = input;
-        }
+        display_input(" - ");
     } else if(e.key=="/"){
-        if(input!="Error"){
-            input += " / ";
-            display.textContent = input;
-        }
+        display_input(" / ");
     } else if(e.key=="*"){ 
-        if(input!="Error"){
-            input += " * ";
-            display.textContent = input;
-        }
+        display_input(" * ");
     } else if(e.key=="Backspace"){
         if(input!="Error"){
             let back = input.split("");
-    if(back[back.length-1]==" "){
-    back.splice(back.length-3,3,);
-    input = back.join("");
-    display.textContent = input;
-    } else {
+            if(back[back.length-1]==" "){
+                back.splice(back.length-3,3,);
+                input = back.join("");
+                display.textContent = input;
+            } else {
     back.splice(back.length-1,1,);
     input = back.join("");
     display.textContent = input;
-    }
+            }
         }
     } else if(e.code=="Enter"||e.key=="="){
         if(input!="Error"){
@@ -226,8 +121,6 @@ const keyboard = document.addEventListener('keydown',(e)=>{
         display.textContent = input;
     } 
 })
-
-
 const enter = document.querySelector("#enter").addEventListener("click",operate);
 const backspace = document.querySelector("#backspace").addEventListener("click",function (){
     let back = input.split("");

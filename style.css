@@ -1,5 +1,5 @@
 body{
-    background-color: antiquewhite;
+    background-color: gainsboro;
     row-gap: 15px;
     display: flex;
     flex-direction: column;
@@ -15,6 +15,11 @@ button {
     font-size: 20px;
     font-weight: 400;
 }
+button:hover {
+    background-color: whitesmoke;
+    color: navy;
+}
+
 .calculator {
  margin: auto;
  height: 600px;
@@ -116,12 +121,16 @@ button {
     color: darkblue;
     font-weight: 500;
     width: 1000px;
-    height: 200px;
     margin: auto;
-    padding: 10px;
+    padding: 15px;
     box-shadow: inset 15px lightslategray;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    flex: 1;
+    row-gap: 15px;
+}
+p {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
 }
