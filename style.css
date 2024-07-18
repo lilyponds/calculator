@@ -1,12 +1,12 @@
 body{
-    background-color: gainsboro;
+    background-color: linen;
     row-gap: 15px;
     display: flex;
     flex-direction: column;
 }
 button {
-    background-color: rgb(165, 42, 42, .85);
-    color: aliceblue;
+    background-color: white;
+    color: navy;
     width: 80px;
     height: 80px;
     border-radius: 10px;
@@ -17,7 +17,7 @@ button {
 }
 button:hover {
     background-color: whitesmoke;
-    color: navy;
+    color: deeppink;
 }
 
 .calculator {
@@ -95,7 +95,7 @@ button:hover {
 
 #enter {
     height: 180px;
-    background-color: black;
+    background-color: lightseagreen;
 }
 
 #backspace {
@@ -103,11 +103,19 @@ button:hover {
 }
 
 #clear {
-    background-color:forestgreen;
+    background-color:lightcoral;
 }
 
 .operatorStyle {
-    background-color: darkcyan;
+    background-color: lightcyan;
+    color: brown;
+    font-size:larger;
+}
+
+.operatorStyle:hover {
+    background-color: lightblue;
+    color: black;
+
 }
 
 #zero {
